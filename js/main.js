@@ -2,6 +2,8 @@ const navToggle = document.getElementById("navToggle");
 const navLinks = document.getElementById("navLinks");
 const filterBar = document.getElementById("filterBar");
 const galleryGrid = document.getElementById("galleryGrid");
+const phoneSection = document.getElementById("phoneSection");
+const phoneGrid = document.getElementById("phoneGrid");
 const aboutStats = document.getElementById("aboutStats");
 const contactForm = document.getElementById("contactForm");
 const formStatus = document.querySelector(".form-status");
@@ -48,69 +50,103 @@ function renderFilters() {
   });
 }
 
+function makeCard(project, isPhone) {
+  const card = document.createElement("article");
+  card.className = "card reveal" + (isPhone ? " card-phone" : "");
+  card.tabIndex = 0;
+  card.setAttribute("role", "button");
+  card.setAttribute("aria-label", `Play ${project.title}`);
+
+  const thumb = document.createElement("div");
+  thumb.className = "thumb";
+
+  const fallback = document.createElement("span");
+  fallback.className = "thumb-fallback";
+  fallback.textContent = initials(project.title);
+
+  const img = document.createElement("img");
+  img.src = project.thumbnail;
+  img.alt = project.title;
+  img.loading = "lazy";
+  img.decoding = "async";
+  img.addEventListener("error", () => img.remove());
+
+  const playBadge = document.createElement("span");
+  playBadge.className = "play-badge";
+  playBadge.textContent = "\u25B6";
+
+  thumb.append(fallback, img);
+
+  if (!isPhone) thumb.appendChild(playBadge);
+
+  if (project.duration) {
+    const duration = document.createElement("span");
+    duration.className = "duration";
+    duration.textContent = project.duration;
+    thumb.appendChild(duration);
+  }
+
+  const body = document.createElement("div");
+  body.className = "card-body";
+
+  const tag = document.createElement("span");
+  tag.className = "tag";
+  tag.textContent = categoryLabel(project.category);
+
+  const title = document.createElement("h3");
+  title.className = "card-title";
+  title.textContent = project.title;
+
+  body.append(tag, title);
+
+  if (project.client) {
+    const client = document.createElement("p");
+    client.className = "card-client";
+    client.textContent = project.client;
+    body.appendChild(client);
+  }
+
+  card.append(thumb, body);
+
+  const open = () => openLightbox(project);
+  card.addEventListener("click", open);
+  card.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      open();
+    }
+  });
+
+  return card;
+}
+
 function renderGallery(filterId) {
   galleryGrid.innerHTML = "";
-  const items =
-    filterId === "all" ? PROJECTS : PROJECTS.filter((p) => p.category === filterId);
+  phoneGrid.innerHTML = "";
 
-  items.forEach((project) => {
-    const card = document.createElement("article");
-    card.className = "card reveal";
-    card.tabIndex = 0;
-    card.setAttribute("role", "button");
-    card.setAttribute("aria-label", `Play ${project.title}`);
+  let landscape = [];
+  let phones = [];
 
-    const thumb = document.createElement("div");
-    thumb.className = "thumb";
+  if (filterId === "all") {
+    phones = PROJECTS.filter((p) => p.category === "reels");
+    landscape = PROJECTS.filter((p) => p.category !== "reels");
+  } else if (filterId === "reels") {
+    phones = PROJECTS.filter((p) => p.category === "reels");
+  } else {
+    landscape = PROJECTS.filter((p) => p.category === filterId);
+  }
 
-    const fallback = document.createElement("span");
-    fallback.className = "thumb-fallback";
-    fallback.textContent = initials(project.title);
+  phoneSection.hidden = phones.length === 0;
 
-    const img = document.createElement("img");
-    img.src = project.thumbnail;
-    img.alt = project.title;
-    img.loading = "lazy";
-    img.decoding = "async";
-    img.addEventListener("error", () => img.remove());
-
-    const playBadge = document.createElement("span");
-    playBadge.className = "play-badge";
-    playBadge.textContent = "\u25B6";
-
-    thumb.append(fallback, img, playBadge);
-
-    if (project.duration) {
-      const duration = document.createElement("span");
-      duration.className = "duration";
-      duration.textContent = project.duration;
-      thumb.appendChild(duration);
-    }
-
-    const body = document.createElement("div");
-    body.className = "card-body";
-
-    const tag = document.createElement("span");
-    tag.className = "tag";
-    tag.textContent = categoryLabel(project.category);
-
-    const title = document.createElement("h3");
-    title.className = "card-title";
-    title.textContent = project.title;
-
-    body.append(tag, title);
-    card.append(thumb, body);
-
-    const open = () => openLightbox(project);
-    card.addEventListener("click", open);
-    card.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        open();
-      }
-    });
-
+  landscape.forEach((project) => {
+    const card = makeCard(project, false);
     galleryGrid.appendChild(card);
+    observeReveal(card);
+  });
+
+  phones.forEach((project) => {
+    const card = makeCard(project, true);
+    phoneGrid.appendChild(card);
     observeReveal(card);
   });
 }
