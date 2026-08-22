@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlixMedia — Saksham Raj · Video Editor</title>
+  <meta name="description" content="PlixMedia is the video editing studio of Saksham Raj — YouTube edits, reels, ads and music videos that keep people watching.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="#home">PLIX<span>MEDIA</span></a>
+    <button id="navToggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="navLinks" class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow reveal">PLIXMEDIA &middot; VIDEO EDITING STUDIO</p>
+      <h1 class="reveal">SAKSHAM RAJ</h1>
+      <p class="tagline reveal">I cut stories that keep people watching.</p>
+      <div class="hero-ctas reveal">
+        <a href="#work" class="btn btn-solid">View My Work</a>
+        <button id="showreelBtn" class="btn btn-ghost">&#9654;&nbsp; Watch Showreel</button>
+      </div>
+    </div>
+    <a class="scroll-hint" href="#work" aria-label="Scroll to work">&darr;</a>
+  </section>
+
+  <section id="work" class="section">
+    <p class="eyebrow reveal">PORTFOLIO</p>
+    <h2 class="reveal">Selected Work</h2>
+    <div id="filterBar" class="filter-bar reveal"></div>
+    <div id="galleryGrid" class="gallery-grid"></div>
+  </section>
+
+  <section id="about" class="section about">
+    <div class="about-grid">
+      <div class="portrait reveal" aria-hidden="true"><span>SR</span></div>
+      <div class="about-copy">
+        <p class="eyebrow reveal">ABOUT ME</p>
+        <h2 class="reveal">The editor behind PlixMedia</h2>
+        <p class="reveal">I'm Saksham Raj, a video editor and the founder of PlixMedia. I help creators and brands turn raw footage into videos people actually finish — sharp pacing, clean sound and a look that fits the story.</p>
+        <p class="reveal">From long-form YouTube documentaries to scroll-stopping reels and commercial spots, every project gets the same obsession: hold attention frame by frame.</p>
+        <div class="badges reveal">
+          <span>Premiere Pro</span>
+          <span>After Effects</span>
+          <span>DaVinci Resolve</span>
+          <span>Audition</span>
+        </div>
+        <div id="aboutStats" class="stats reveal"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact">
+    <p class="eyebrow reveal">CONTACT</p>
+    <h2 class="reveal">Let's build something worth watching.</h2>
+    <div class="contact-grid">
+      <form id="contactForm" class="contact-form reveal" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <label for="cf-name">Name</label>
+        <input id="cf-name" name="name" type="text" required autocomplete="name" placeholder="Your name">
+        <label for="cf-email">Email</label>
+        <input id="cf-email" name="email" type="email" required autocomplete="email" placeholder="you@example.com">
+        <label for="cf-message">Project details</label>
+        <textarea id="cf-message" name="message" rows="5" required placeholder="Tell me about your footage, deadline and style references..."></textarea>
+        <button type="submit" class="btn btn-solid">Send Message</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+      <div class="contact-links reveal">
+        <h3>Prefer direct?</h3>
+        <ul>
+          <li><a href="#"><span aria-hidden="true">&#9993;</span> Email</a></li>
+          <li><a href="#" target="_blank" rel="noopener"><span aria-hidden="true">&#9635;</span> Instagram</a></li>
+          <li><a href="#" target="_blank" rel="noopener"><span aria-hidden="true">&#9654;</span> YouTube</a></li>
+          <li><a href="#" target="_blank" rel="noopener"><span aria-hidden="true">&#9990;</span> WhatsApp</a></li>
+        </ul>
+        <p class="availability">Currently booking new projects for this quarter.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> PlixMedia &middot; Edited by Saksham Raj</p>
+    <a href="#home" class="back-top" aria-label="Back to top">&uarr;</a>
+  </footer>
+
+  <div id="lightbox" class="lightbox" hidden role="dialog" aria-modal="true" aria-label="Video player">
+    <div class="lightbox-inner">
+      <button id="lightboxClose" class="lightbox-close" aria-label="Close video">&times;</button>
+      <div class="lightbox-media"></div>
+      <h3 class="lightbox-title"></h3>
+      <p class="lightbox-meta"></p>
+      <p class="lightbox-desc"></p>
+    </div>
+  </div>
+
+  <script src="js/projects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
