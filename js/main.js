@@ -116,6 +116,7 @@ function renderGallery(filterId) {
 }
 
 function buildEmbedUrl(url) {
+  if (url.includes("drive.google.com")) return url;
   const sep = url.includes("?") ? "&" : "?";
   return `${url}${sep}autoplay=1&rel=0`;
 }
