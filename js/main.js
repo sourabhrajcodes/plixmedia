@@ -162,14 +162,40 @@ function buildEmbedUrl(url) {
   return `${url}${sep}autoplay=1&rel=0`;
 }
 
+function isPortrait(item) {
+  return item.category === "reels" || item.category === "music-video";
+}
+
 function fillLightbox(item) {
+  const portrait = isPortrait(item);
+  lightboxMedia.classList.toggle("portrait", portrait);
+
   const iframe = document.createElement("iframe");
   iframe.src = buildEmbedUrl(item.embedUrl);
-  iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+  iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen";
   iframe.allowFullscreen = true;
   iframe.title = item.title;
   lightboxMedia.innerHTML = "";
   lightboxMedia.appendChild(iframe);
+
+  const fsBtn = document.createElement("button");
+  fsBtn.className = "lightbox-fs";
+  fsBtn.setAttribute("aria-label", "Fullscreen");
+  fsBtn.textContent = "\u26F6";
+  fsBtn.addEventListener("click", () => {
+    if (document.fullscreenElement === lightboxMedia) {
+      document.exitFullscreen();
+    } else {
+      (lightboxMedia.requestFullscreen || lightboxMedia.webkitRequestFullscreen || (() => iframe.requestFullscreen())).call(lightboxMedia).catch(() => {
+        if (iframe.requestFullscreen) iframe.requestFullscreen().catch(() => {});
+      });
+    }
+  });
+  lightboxMedia.appendChild(fsBtn);
+
+  document.addEventListener("fullscreenchange", function onFs() {
+    fsBtn.textContent = document.fullscreenElement === lightboxMedia ? "\u2715" : "\u26F6";
+  }, { once: false });
 
   lightboxTitle.textContent = item.title;
   lightboxDesc.textContent = item.description || "";

@@ -8,31 +8,31 @@ const CATEGORIES = [
 const DRIVE = "https://drive.google.com";
 
 const WORK = [
-  ["Reel 001", "1LbFx-192OoH5HmylO7gQdYmyeYfAWr3B", "reels", null],
-  ["50-Second Final Cut", "13v-63Tu9HVm_dORtJN5PPe0NHBxeUZrU", "reels", null],
-  ["Reel 3 — V3", "1LiZ8CnNsagxwiHsEHiCZ-L9oMqOl2iDg", "reels", null],
-  ["Sample Reel", "1yVTzM35FJE9kjPYalfKl6GAQaBu4Swwx", "reels", null],
-  ["Coca-Cola Branding", "1pUm43wwx0lBLBLjzIwdPp3ZGz50nLeGq", "ads", "Coca-Cola"],
-  ["401K Contribution — Cameron Ad", "1embAbKycW_VT-vfSHCXRKGC_KFSsHKGr", "ads", null],
-  ["Infotik Ads", "1AIZ8f_fGdF9VfEYfiDLEL-AgyGtW4GnN", "ads", "Infotik"],
-  ["QA Wolf", "1vEtxXISF8BjXnnHA2Fje-kxvOMVZkKJR", "ads", "QA Wolf"],
-  ["Quadratic", "1WS8b0k1jY3Alvnhzb_PgSomC4GnaQCnf", "ads", "Quadratic"],
-  ["Forex Promo", "1H6hOn5EHShh0Qu6TIIQGRa44zsZBLYhh", "ads", null],
-  ["Guardiora", "1umXSsawGdD0q95sqDKNXM8SIpOUD2EUj", "ads", "Guardiora"],
-  ["Wizzz", "18xJtwYxFMG044It3mRynTEZGITk1R-CN", "ads", "Wizzz"],
-  ["Explainer Video 1", "1RnJ-7QMywZnYr3a_QF3oORc9ZptlpSzp", "ads", null],
-  ["Brand Example 1", "1QK_PrEUSKrx7rR1Uk3o80bqQQy41Vy5O", "ads", null],
-  ["Brand Example 2", "1uxHnYv-8U69Bp1kX0pHiXVpf-cy-Rwrd", "ads", null],
-  ["Documentary Cut — A", "1cvlFQK1PKGGFL06g-boMP7m9MOg8d-pL", "youtube-edit", null],
-  ["Documentary Cut — B", "1fGWh1k_ZHY1FHMPxn5hdRXzdtYJAzkcS", "youtube-edit", null],
-  ["Final Video 1", "1ER7w5SV9R5bSw878LPv0nApvMMJSubqY", "youtube-edit", null],
-  ["Twin Mind — Final Draft", "15ECYxr3iam8oXnKUEQxgT7z-Dlc3iSor", "youtube-edit", "Twin Mind"],
-  ["Sequence 01", "1yG-CRhTjZYlsXWjS6uXO3BXlmMmpxtUC", "youtube-edit", null],
-  ["Experimental Cut 2", "1Mb9orowPdPBIdxvdpEnxTDaA3eLvJfoh", "youtube-edit", null],
-  ["Project 05", "18kK1xF7hT64k7F0gd5TWLPKQQQ_TtX4Q", "youtube-edit", null],
-  ["Video 7", "1X5Sl8dIyDEWECECQaeYT5PgVQEE-CztB", "youtube-edit", null],
-  ["Xyz", "1uShrZvloqXnfzR86Fu18nA_xTsi5D-A9", "youtube-edit", null],
-  ["Gozel Ora", "1w9uSVq5oh-Oq-r9y8NYqiBzeiFTP3aZy", "music-video", "Gozel Ora"]
+  ["Rhythm & Motion — Fashion Reel", "1LbFx-192OoH5HmylO7gQdYmyeYfAWr3B", "reels", null],
+  ["50 Seconds to Impact — Brand Teaser", "13v-63Tu9HVm_dORtJN5PPe0NHBxeUZrU", "reels", null],
+  ["Neon Nights — Streetwear Reel V3", "1LiZ8CnNsagxwiHsEHiCZ-L9oMqOl2iDg", "reels", null],
+  ["Signature Moves — Creator Reel", "1yVTzM35FJE9kjPYalfKl6GAQaBu4Swwx", "reels", null],
+  ["Coca-Cola — Taste the Feeling Campaign", "1pUm43wwx0lBLBLjzIwdPp3ZGz50nLeGq", "ads", "Coca-Cola"],
+  ["Secure Tomorrow — 401(k) Financial Ad", "1embAbKycW_VT-vfSHCXRKGC_KFSsHKGr", "ads", "Cameron Financial"],
+  ["Infotik — Viral Ad Campaign", "1AIZ8f_fGdF9VfEYfiDLEL-AgyGtW4GnN", "ads", "Infotik"],
+  ["QA Wolf — How It Works Explainer", "1vEtxXISF8BjXnnHA2Fje-kxvOMVZkKJR", "ads", "QA Wolf"],
+  ["Quadratic — Product Launch Film", "1WS8b0k1jY3Alvnhzb_PgSomC4GnaQCnf", "ads", "Quadratic"],
+  ["Forex Pro — Trading Platform Promo", "1H6hOn5EHShh0Qu6TIIQGRa44zsZBLYhh", "ads", "ForexPro"],
+  ["Guardiora — Luxury Brand Film", "1umXSsawGdD0q95sqDKNXM8SIpOUD2EUj", "ads", "Guardiora"],
+  ["Wizzz — App Launch Campaign", "18xJtwYxFMG044It3mRynTEZGITk1R-CN", "ads", "Wizzz"],
+  ["The Big Idea — Animated Explainer", "1RnJ-7QMywZnYr3a_QF3oORc9ZptlpSzp", "ads", "Explainer Co."],
+  ["Luxury Unboxed — Product Showcase", "1QK_PrEUSKrx7rR1Uk3o80bqQQy41Vy5O", "ads", "Luxury Co."],
+  ["Style in Motion — Fashion Film", "1uxHnYv-8U69Bp1kX0pHiXVpf-cy-Rwrd", "ads", "Fashion House"],
+  ["Voices of the Valley — Documentary", "1cvlFQK1PKGGFL06g-boMP7m9MOg8d-pL", "youtube-edit", "Documentary"],
+  ["City Lights — Urban Documentary", "1fGWh1k_ZHY1FHMPxn5hdRXzdtYJAzkcS", "youtube-edit", "Documentary"],
+  ["The Final Cut — Cinematic Montage", "1ER7w5SV9R5bSw878LPv0nApvMMJSubqY", "youtube-edit", "Cinematic"],
+  ["Twin Mind — Psychological Thriller", "15ECYxr3iam8oXnKUEQxgT7z-Dlc3iSor", "youtube-edit", "Twin Mind"],
+  ["Sequence 01 — Opening Titles Cut", "1yG-CRhTjZYlsXWjS6uXO3BXlmMmpxtUC", "youtube-edit", "Studio Cut"],
+  ["Fractured Light — Experimental Film", "1Mb9orowPdPBIdxvdpEnxTDaA3eLvJfoh", "youtube-edit", "Art House"],
+  ["Genesis — Brand Origin Story", "18kK1xF7hT64k7F0gd5TWLPKQQQ_TtX4Q", "youtube-edit", "Genesis"],
+  ["Momentum — Highlights Reel 07", "1X5Sl8dIyDEWECECQaeYT5PgVQEE-CztB", "youtube-edit", "Highlights"],
+  ["XYZ — Concept Edit", "1uShrZvloqXnfzR86Fu18nA_xTsi5D-A9", "youtube-edit", "XYZ Studio"],
+  ["Gözel Ora — Official Music Video", "1w9uSVq5oh-Oq-r9y8NYqiBzeiFTP3aZy", "music-video", "Gözel Ora"]
 ];
 
 const PROJECTS = WORK.map(([title, fileId, category, client], i) => ({
@@ -47,7 +47,7 @@ const PROJECTS = WORK.map(([title, fileId, category, client], i) => ({
 const REEL_FILE_ID = "1LbFx-192OoH5HmylO7gQdYmyeYfAWr3B";
 
 const SHOWREEL = {
-  title: "PlixMedia Showreel",
-  description: "One minute of our best frames. Full reel on request.",
+  title: "PlixMedia — Official Showreel 2025",
+  description: "60 seconds of our best work across reels, commercials, documentaries & music videos.",
   embedUrl: `${DRIVE}/file/d/${REEL_FILE_ID}/preview`
 };
