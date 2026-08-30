@@ -41,7 +41,7 @@ const PROJECTS = WORK.map(([title, fileId, category, client], i) => ({
   category,
   client,
   embedUrl: `${DRIVE}/file/d/${fileId}/preview`,
-  thumbnail: `${DRIVE}/thumbnail?id=${fileId}&sz=w1280`
+  thumbnail: `${DRIVE}/thumbnail?id=${fileId}&sz=w600`
 }));
 
 const REEL_FILE_ID = "1LbFx-192OoH5HmylO7gQdYmyeYfAWr3B";

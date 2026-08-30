@@ -36,11 +36,19 @@ const server = http.createServer((req, res) => {
 
   fs.readFile(filePath, (err, data) => {
     if (err) {
-      res.writeHead(404, { "Content-Type": "text/plain" });
+      res.writeHead(404, { "Content-Type": "text/plain", "Cache-Control": "no-store" });
       return res.end("404 Not Found");
     }
     const ext = path.extname(filePath).toLowerCase();
-    res.writeHead(200, { "Content-Type": MIME[ext] || "application/octet-stream" });
+    const isStaticAsset = [".css",".js",".svg",".jpg",".jpeg",".png",".webp",".woff2",".ico"].includes(ext);
+    const headers = {
+      "Content-Type": MIME[ext] || "application/octet-stream",
+      "X-Content-Type-Options": "nosniff",
+      "Cache-Control": isStaticAsset ? "public, max-age=31536000, immutable" : "public, max-age=0, must-revalidate",
+      "Referrer-Policy": "strict-origin-when-cross-origin"
+    };
+    if (ext === ".html") headers["X-Frame-Options"] = "SAMEORIGIN";
+    res.writeHead(200, headers);
     res.end(data);
   });
 });

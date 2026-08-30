@@ -40,10 +40,15 @@ function renderFilters() {
     chip.className = "chip" + (id === activeFilter ? " active" : "");
     chip.textContent = label;
     chip.dataset.filter = id;
+    chip.setAttribute("aria-pressed", String(id === activeFilter));
     chip.addEventListener("click", () => {
       activeFilter = id;
-      filterBar.querySelectorAll(".chip").forEach((c) => c.classList.remove("active"));
+      filterBar.querySelectorAll(".chip").forEach((c) => {
+        c.classList.remove("active");
+        c.setAttribute("aria-pressed", "false");
+      });
       chip.classList.add("active");
+      chip.setAttribute("aria-pressed", "true");
       renderGallery(id);
     });
     filterBar.appendChild(chip);
@@ -174,10 +179,16 @@ function fillLightbox(item) {
   lightboxMeta.style.display = metaParts.length ? "" : "none";
 }
 
+let scrollY = 0;
+
 function openLightbox(item) {
   lastFocused = document.activeElement;
+  scrollY = window.scrollY;
   fillLightbox(item);
   lightbox.hidden = false;
+  document.body.style.position = "fixed";
+  document.body.style.top = `-${scrollY}px`;
+  document.body.style.width = "100%";
   document.body.style.overflow = "hidden";
   lightboxClose.focus();
 }
@@ -185,12 +196,24 @@ function openLightbox(item) {
 function closeLightbox() {
   lightbox.hidden = true;
   lightboxMedia.innerHTML = "";
+  document.body.style.position = "";
+  document.body.style.top = "";
+  document.body.style.width = "";
   document.body.style.overflow = "";
+  window.scrollTo(0, scrollY);
   if (lastFocused) lastFocused.focus();
 }
 
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && !lightbox.hidden) closeLightbox();
+  if (e.key === "Escape") {
+    if (!lightbox.hidden) closeLightbox();
+    else if (navLinks.classList.contains("open")) {
+      navLinks.classList.remove("open");
+      document.body.classList.remove("menu-open");
+      navToggle.setAttribute("aria-expanded", "false");
+      navToggle.focus();
+    }
+  }
 });
 
 lightbox.addEventListener("click", (e) => {
@@ -212,6 +235,43 @@ navLinks.querySelectorAll("a").forEach((link) => {
     navToggle.setAttribute("aria-expanded", "false");
   });
 });
+
+document.addEventListener("click", (e) => {
+  if (
+    navLinks.classList.contains("open") &&
+    !navLinks.contains(e.target) &&
+    !navToggle.contains(e.target)
+  ) {
+    navLinks.classList.remove("open");
+    document.body.classList.remove("menu-open");
+    navToggle.setAttribute("aria-expanded", "false");
+  }
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 900 && navLinks.classList.contains("open")) {
+    navLinks.classList.remove("open");
+    document.body.classList.remove("menu-open");
+    navToggle.setAttribute("aria-expanded", "false");
+  }
+});
+
+let touchStartY = 0;
+lightbox.addEventListener(
+  "touchstart",
+  (e) => {
+    touchStartY = e.touches[0].clientY;
+  },
+  { passive: true }
+);
+lightbox.addEventListener(
+  "touchmove",
+  (e) => {
+    const delta = e.touches[0].clientY - touchStartY;
+    if (delta > 80 && e.target === lightbox) closeLightbox();
+  },
+  { passive: true }
+);
 
 const showreelBtn = document.getElementById("showreelBtn");
 showreelBtn.addEventListener("click", () => openLightbox(SHOWREEL));
