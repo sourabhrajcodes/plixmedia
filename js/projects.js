@@ -33,7 +33,8 @@ const WORK = [
   ["Momentum — Highlights Reel 07", "1X5Sl8dIyDEWECECQaeYT5PgVQEE-CztB", "youtube-edit", "Highlights"],
   ["XYZ — Concept Edit", "1uShrZvloqXnfzR86Fu18nA_xTsi5D-A9", "youtube-edit", "XYZ Studio"],
   ["Gözel Ora — Official Music Video", "1w9uSVq5oh-Oq-r9y8NYqiBzeiFTP3aZy", "music-video", "Gözel Ora"],
-  ["Version Enhanced 01 — VFX Enhanced Cut", "1Lduaz9C7ZcYTuuTHA39onSsYQl7LRTei", "youtube-edit", null]
+  ["Version Enhanced 01 — VFX Enhanced Cut", "1Lduaz9C7ZcYTuuTHA39onSsYQl7LRTei", "youtube-edit", null],
+  ["Linked Comp 02 — VFX Composite", "1XzPwoUEj5JtVpwSlU34QM4cZ-_FeqctV", "youtube-edit", null]
 ];
 
 const HIDDEN_IDS = new Set([
