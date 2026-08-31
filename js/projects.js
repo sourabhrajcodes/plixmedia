@@ -32,7 +32,8 @@ const WORK = [
   ["Genesis — Brand Origin Story", "18kK1xF7hT64k7F0gd5TWLPKQQQ_TtX4Q", "youtube-edit", "Genesis"],
   ["Momentum — Highlights Reel 07", "1X5Sl8dIyDEWECECQaeYT5PgVQEE-CztB", "youtube-edit", "Highlights"],
   ["XYZ — Concept Edit", "1uShrZvloqXnfzR86Fu18nA_xTsi5D-A9", "youtube-edit", "XYZ Studio"],
-  ["Gözel Ora — Official Music Video", "1w9uSVq5oh-Oq-r9y8NYqiBzeiFTP3aZy", "music-video", "Gözel Ora"]
+  ["Gözel Ora — Official Music Video", "1w9uSVq5oh-Oq-r9y8NYqiBzeiFTP3aZy", "music-video", "Gözel Ora"],
+  ["Version Enhanced 01 — VFX Enhanced Cut", "1Lduaz9C7ZcYTuuTHA39onSsYQl7LRTei", "youtube-edit", null]
 ];
 
 const HIDDEN_IDS = new Set([
