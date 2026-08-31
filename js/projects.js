@@ -2,7 +2,8 @@ const CATEGORIES = [
   { id: "youtube-edit", label: "YouTube Edits" },
   { id: "reels", label: "Reels & Shorts" },
   { id: "ads", label: "Ads & Commercials" },
-  { id: "music-video", label: "Music Videos" }
+  { id: "music-video", label: "Music Videos" },
+  { id: "bts", label: "Behind the Scenes" }
 ];
 
 const DRIVE = "https://drive.google.com";
@@ -35,7 +36,7 @@ const WORK = [
   ["Gözel Ora — Official Music Video", "1w9uSVq5oh-Oq-r9y8NYqiBzeiFTP3aZy", "music-video", "Gözel Ora"],
   ["Version Enhanced 01 — VFX Enhanced Cut", "1Lduaz9C7ZcYTuuTHA39onSsYQl7LRTei", "youtube-edit", null],
   ["Linked Comp 02 — VFX Composite", "1XzPwoUEj5JtVpwSlU34QM4cZ-_FeqctV", "youtube-edit", null],
-  ["VID 20260831 — Cinematic Capture", "1acvLPJaqp5WAEZluL6nfPTrhlJAE67cc", "youtube-edit", null],
+  ["VID 20260831 — Cinematic Capture", "1acvLPJaqp5WAEZluL6nfPTrhlJAE67cc", "bts", null],
   ["Snap Edit — 64826", "1P1zKlrcfLPLU6kIb74dmZfZcKmcqc4cO", "reels", null],
   ["Snap Edit — 65945", "1YTTYknkowto8D9X_USfpd5gS04knId4x", "reels", null],
   ["Dynamic Cut — 85028", "1YT3jsp5WSzyc86Jq81e9iXW87LGPBtd3", "youtube-edit", null],
