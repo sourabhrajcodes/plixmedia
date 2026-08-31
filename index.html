@@ -150,6 +150,12 @@
 
   <script src="js/projects.js"></script>
   <script src="js/main.js"></script>
+  <script type="module">
+    import { inject } from "https://esm.sh/@vercel/analytics@1.4.1";
+    inject();
+    import { injectSpeedInsights } from "https://esm.sh/@vercel/speed-insights@1.1.0";
+    injectSpeedInsights();
+  </script>
 </body>
 </html>
 
