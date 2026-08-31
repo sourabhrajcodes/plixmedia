@@ -34,7 +34,13 @@ const WORK = [
   ["XYZ — Concept Edit", "1uShrZvloqXnfzR86Fu18nA_xTsi5D-A9", "youtube-edit", "XYZ Studio"],
   ["Gözel Ora — Official Music Video", "1w9uSVq5oh-Oq-r9y8NYqiBzeiFTP3aZy", "music-video", "Gözel Ora"],
   ["Version Enhanced 01 — VFX Enhanced Cut", "1Lduaz9C7ZcYTuuTHA39onSsYQl7LRTei", "youtube-edit", null],
-  ["Linked Comp 02 — VFX Composite", "1XzPwoUEj5JtVpwSlU34QM4cZ-_FeqctV", "youtube-edit", null]
+  ["Linked Comp 02 — VFX Composite", "1XzPwoUEj5JtVpwSlU34QM4cZ-_FeqctV", "youtube-edit", null],
+  ["VID 20260831 — Cinematic Capture", "1acvLPJaqp5WAEZluL6nfPTrhlJAE67cc", "youtube-edit", null],
+  ["Snap Edit — 64826", "1P1zKlrcfLPLU6kIb74dmZfZcKmcqc4cO", "reels", null],
+  ["Snap Edit — 65945", "1YTTYknkowto8D9X_USfpd5gS04knId4x", "reels", null],
+  ["Dynamic Cut — 85028", "1YT3jsp5WSzyc86Jq81e9iXW87LGPBtd3", "youtube-edit", null],
+  ["Export 03 — Master Render", "1HvlaWk3FGWopL1GKwlUnQ07VVVivEJrW", "youtube-edit", null],
+  ["Linked Comp 02 V2 — VFX Composite", "1WmbIGOloiO3qKvyaftvvnDsxL7uKU6ad", "youtube-edit", null]
 ];
 
 const HIDDEN_IDS = new Set([
