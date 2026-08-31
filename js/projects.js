@@ -35,7 +35,17 @@ const WORK = [
   ["Gözel Ora — Official Music Video", "1w9uSVq5oh-Oq-r9y8NYqiBzeiFTP3aZy", "music-video", "Gözel Ora"]
 ];
 
-const PROJECTS = WORK.map(([title, fileId, category, client], i) => ({
+const HIDDEN_IDS = new Set([
+  "1LiZ8CnNsagxwiHsEHiCZ-L9oMqOl2iDg",
+  "1yVTzM35FJE9kjPYalfKl6GAQaBu4Swwx",
+  "1embAbKycW_VT-vfSHCXRKGC_KFSsHKGr",
+  "1vEtxXISF8BjXnnHA2Fje-kxvOMVZkKJR",
+  "1WS8b0k1jY3Alvnhzb_PgSomC4GnaQCnf",
+  "18kK1xF7hT64k7F0gd5TWLPKQQQ_TtX4Q",
+  "1w9uSVq5oh-Oq-r9y8NYqiBzeiFTP3aZy"
+]);
+
+const PROJECTS = WORK.filter(([, fileId]) => !HIDDEN_IDS.has(fileId)).map(([title, fileId, category, client], i) => ({
   id: `work-${i + 1}`,
   title,
   category,
