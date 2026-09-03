@@ -51,7 +51,9 @@ const HIDDEN_IDS = new Set([
   "1vEtxXISF8BjXnnHA2Fje-kxvOMVZkKJR",
   "1WS8b0k1jY3Alvnhzb_PgSomC4GnaQCnf",
   "18kK1xF7hT64k7F0gd5TWLPKQQQ_TtX4Q",
-  "1w9uSVq5oh-Oq-r9y8NYqiBzeiFTP3aZy"
+  "1w9uSVq5oh-Oq-r9y8NYqiBzeiFTP3aZy",
+  "1Mb9orowPdPBIdxvdpEnxTDaA3eLvJfoh",
+  "1X5Sl8dIyDEWECECQaeYT5PgVQEE-CztB"
 ]);
 
 const PROJECTS = WORK.filter(([, fileId]) => !HIDDEN_IDS.has(fileId)).map(([title, fileId, category, client], i) => ({
